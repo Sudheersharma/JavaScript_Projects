@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator using javascript</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: aqua;
+            font-size: large;
+        }
+        h1{
+            margin-top: 15vh;
+            margin-bottom: 15px;
+            font-size: 80px;
+            color: brown;
+        }
+        h1 span{
+            margin-top: 15vh;
+            margin-bottom: 15px;
+            font-size: 80px;
+            color: rgb(219, 128, 128);
+        }
+        p{
+            margin-bottom: 20px;
+        }
+        p span{
+            color: chocolate;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        input{
+            background-color: darkcyan;
+            border-radius: 10%;
+            height: 20vh;
+            width: 20%;
+            font-size: 50px;
+            margin-bottom: 25px;
+        }
+        select{
+            border-radius: 10%;
+            background-color: burlywood;
+            height: 15vh;
+            width: 9%;
+            font-size: 5vh;
+        }
+        .res{
+            width: 50%;
+        }
+        button{
+            padding: 20px;
+            /* font-size: 100%; */
+            background-color: black;
+            color: aliceblue;
+            border: 1px white;
+            font-weight: bold;
+            border-radius: 20%;
+        }
+    </style>
+</head>
+<body>
+    <h1> <span>Web</span> Calculator</h1>
+    <p>created by- <span>Sudheer</span></p>
+    <input type="number" step="any" name="first" id="first">
+    <select name="operator" id="ope">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">x</option>
+        <option value="/">/</option>
+    </select>
+    <input type="number" step="any" name="second" id="second">
+    <br>
+    <input class="res" type="" step="any" name="" id="res" readonly="">
+    <br>
+    <button onclick="cal()">Calculate</button>
+</body>
+<script type="text/javascript">
+    function cal(){
+        var ope1 = document.getElementById("first").value;
+        var ope2 = document.getElementById("second").value;
+        var ope = document.getElementById("ope").value;
+        if (ope == '+'){
+            var res = parseInt(ope1) + parseInt(ope2);
+        }
+        if (ope == '-'){
+            var res = parseInt(ope1) - parseInt(ope2);
+        }
+        if (ope == '*'){
+            var res = parseInt(ope1) * parseInt(ope2);
+        }
+        if (ope == '/'){
+            var res = parseInt(ope1) / parseInt(ope2);
+        }
+        document.getElementById("res").value = res;
+    }
+   
+</script>
+</html>

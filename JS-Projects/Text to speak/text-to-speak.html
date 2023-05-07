@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speak</title>
+    <style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+			padding: 20px;
+		}
+
+		.container {
+			max-width: 600px;
+            height: 80vh;
+			margin: 0 auto;
+			background-color: #fff;
+			border-radius: 5px;
+			padding: 20px;
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 0;
+            margin-bottom: 20px;
+		}
+
+		textarea {
+			width: 90%;
+			height: 55vh;
+			padding: 10px;
+			border: 2px solid #ccc;
+			border-radius: 4px;
+			resize: vertical;
+			font-size: 16px;
+		}
+
+		button {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 16px;
+			margin-top: 20px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			transition: all 0.3s ease;
+		}
+
+		button:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Text-to-Speech</h1>
+		<!-- <label for="text">Enter Text:</label> -->
+		<textarea id="text" placeholder="Enter your text here..."></textarea>
+		<button onclick="speak()">Speak</button>
+    </div>
+</body>
+<script>
+    function speak() {
+        const text = document.getElementById("text").value;
+        const speech = new SpeechSynthesisUtterance();
+        speech.lang = "en-US";
+        speech.text = text;
+        speech.volume = 1;
+        speech.rate = 1;
+        speech.pitch = 1;
+
+        window.speechSynthesis.speak(speech);
+    }
+</script>
+</html>

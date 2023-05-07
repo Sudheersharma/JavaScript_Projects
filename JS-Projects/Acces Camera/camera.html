@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Camera</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            background: black;
+        }
+        video{
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <video id="video" autoplay="true"></video>
+    <script>
+        let video = document.getElementById('video');
+        if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({video:true})
+            .then(function (s) {
+               video.srcObject = s;
+               console.log("Camera Enable.");
+            })
+            .catch(function (error) {
+                console.log("Camera access permission denied !");
+            });
+        }else{
+            console.log("No");
+        }
+    </script>
+</body>
+</html>

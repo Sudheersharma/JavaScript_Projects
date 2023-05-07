@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leep Year Concept</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /*
+    Leep Year concept-
+            year % 4 = 0 (leep)              if != 0 (NotLeep)
+            year % 100 = 0 (NotLeep)              if != 0 (leep)
+            year % 400 = 0 (leep)              if != 0 (NotLeep)
+
+    if this all statement is true then we will call leepYear.
+    */
+
+    var userInput = prompt("Enter year !");
+    var year = parseInt(userInput);
+    function leepYear(year) {
+        if (year % 4 === 0) {
+            if (year % 100 === 0) {
+                if (year % 400 === 0) {
+                    return "leep year";
+                } else {
+                    return "Not leep year.";
+                }
+            } else {
+                return "leep year.";
+            }
+        } else {
+            return "Not leep year.";
+        }
+    }
+    leepYear(year);
+
+
+</script>
+
+</html>

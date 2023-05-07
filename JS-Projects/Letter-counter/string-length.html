@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenth of Strings</title>
+    <style>
+        body {
+            display: grid;
+            place-items: center;
+        }
+
+        .container {
+            width: 40%;
+            height: 550px;
+            background: #869bd685;
+            position: relative;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #201e1e;
+            font-size: 30px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 500;
+        }
+
+        textarea {
+            position: absolute;
+            bottom: 150px;
+            left: 70px;
+        }
+
+        .res {
+            position: absolute;
+            bottom: 70px;
+            left: 70px;
+        }
+
+        h6 {
+            font-size: 20px;
+            color: blueviolet;
+        }
+
+        span {
+            color: rgba(255, 0, 0, 0.788);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Letter Counter</h2>
+        <textarea oninput ="count()" name="inputText" id="inputText" cols="50" rows="20" placeholder="Enter Text Here ...."></textarea>
+        <div class="res">
+            <h6>Number of letters - <span id="totalLetters">0</span>.</h6>
+        </div>
+    </div>
+</body>
+<script>
+function count() {
+    var text = document.getElementById('inputText').value;
+    document.getElementById('totalLetters').innerText = text.length;
+}
+  
+        
+</script>
+
+</html>
